@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Baking Molds</title>
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
+    <link rel="stylesheet" href="styles.css" type="text/css">
+</head>
+<body>
+    <!-- Admin Header -->
+    <header class="admin-header">
+        <div class="container">
+            <div class="logo">
+                <h1>Admin Panel - Muhammad Siddique Akber</h1>
+            </div>
+
+            <nav class="admin-nav">
+                <ul>
+                    <li><a href="index.html" class="active">Dashboard</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="orders.html">Orders</a></li>
+                    <li><a href="users.html">Users</a></li>
+                    <li><a href="settings.html">Settings</a></li>
+                </ul>
+            </nav>
+
+            <div class="admin-actions">
+                <span>Welcome, Admin</span>
+                <button class="btn btn-secondary">Logout</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Admin Dashboard -->
+    <main class="admin-dashboard">
+        <div class="container">
+            <h1>Admin Dashboard</h1>
+
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Total Products</h3>
+                    <p class="stat-number" id="total-products">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Total Orders</h3>
+                    <p class="stat-number" id="total-orders">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Total Revenue</h3>
+                    <p class="stat-number" id="total-revenue">₹0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Total Users</h3>
+                    <p class="stat-number" id="total-users">0</p>
+                </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="recent-activity">
+                <h2>Recent Activity</h2>
+                <div class="activity-list" id="activity-list">
+                    <!-- Recent activity will be populated here -->
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="quick-actions">
+                <h2>Quick Actions</h2>
+                <div class="actions-grid">
+                    <div class="action-card">
+                        <h3>Add New Product</h3>
+                        <p>Manually add a new product to the store</p>
+                        <button class="btn btn-primary" onclick="location.href='products.html'">Add Product</button>
+                    </div>
+                    <div class="action-card">
+                        <h3>Manage Users</h3>
+                        <p>View and manage registered users</p>
+                        <button class="btn btn-primary" onclick="location.href='users.html'">Manage Users</button>
+                    </div>
+                    <div class="action-card">
+                        <h3>View Orders</h3>
+                        <p>Check and process recent orders</p>
+                        <button class="btn btn-primary" onclick="location.href='orders.html'">View Orders</button>
+                    </div>
+                    <div class="action-card">
+                        <h3>System Settings</h3>
+                        <p>Configure system preferences</p>
+                        <button class="btn btn-primary">Settings</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/main.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

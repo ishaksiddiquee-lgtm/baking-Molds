@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Management - Admin Panel</title>
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
+    <link rel="stylesheet" href="styles.css" type="text/css">
+</head>
+<body>
+    <!-- Admin Header -->
+    <header class="admin-header">
+        <div class="container">
+            <div class="logo">
+                <h1>Admin Panel - Muhammad Siddique Akber</h1>
+            </div>
+
+            <nav class="admin-nav">
+                <ul>
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="products.html" class="active">Products</a></li>
+                    <li><a href="orders.html">Orders</a></li>
+                    <li><a href="users.html">Users</a></li>
+                    <li><a href="settings.html">Settings</a></li>
+                </ul>
+            </nav>
+
+            <div class="admin-actions">
+                <span>Welcome, Admin</span>
+                <button class="btn btn-secondary">Logout</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Product Management -->
+    <main class="admin-dashboard">
+        <div class="container">
+            <h1>Product Management</h1>
+
+            <!-- Add Product Form -->
+            <div class="admin-form">
+                <h2>Add New Product</h2>
+                <form id="add-product-form">
+                    <div class="form-row">
+                        <div class="form-group half-width">
+                            <label for="product-title">Product Title</label>
+                            <input type="text" id="product-title" name="title" required>
+                        </div>
+                        <div class="form-group half-width">
+                            <label for="product-price">Price (₹)</label>
+                            <input type="number" id="product-price" name="price" min="1" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group half-width">
+                            <label for="product-category">Category</label>
+                            <select id="product-category" name="category" required>
+                                <option value="">Select Category</option>
+                                <option value="cake-molds">Cake Molds</option>
+                                <option value="cupcake-molds">Cupcake Molds</option>
+                                <option value="bread-molds">Bread Molds</option>
+                                <option value="silicone-molds">Silicone Molds</option>
+                                <option value="cookie-cutters">Cookie Cutters</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group half-width">
+                            <label for="product-stock">Stock Quantity</label>
+                            <input type="number" id="product-stock" name="stock" min="1" value="1" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="product-description">Description</label>
+                        <textarea id="product-description" name="description" rows="4" required></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group half-width">
+                            <label for="product-brand">Brand</label>
+                            <input type="text" id="product-brand" name="brand">
+                        </div>
+                        <div class="form-group half-width">
+                            <label for="product-material">Material</label>
+                            <input type="text" id="product-material" name="material">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Add Product</button>
+                </form>
+            </div>
+
+            <!-- Product List -->
+            <div class="admin-form">
+                <h2>Manage Products</h2>
+                <div class="search-filter">
+                    <input type="text" id="product-search" placeholder="Search products...">
+                    <select id="product-status-filter">
+                        <option value="">All Products</option>
+                        <option value="active">Active</option>
+                        <option value="inactive">Inactive</option>
+                    </select>
+                </div>
+
+                <table class="admin-table" id="products-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>Price</th>
+                            <th>Category</th>
+                            <th>Stock</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="products-list">
+                        <!-- Products will be loaded here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/main.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

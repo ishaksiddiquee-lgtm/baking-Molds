@@ -1,0 +1,135 @@
+/* Additional responsive styles */
+
+/* Medium screens (768px and up) */
+@media (min-width: 768px) {
+    .container {
+        padding: 0 30px;
+    }
+
+    .main-nav ul {
+        gap: 2.5rem;
+    }
+
+    .search-bar input {
+        width: 300px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .form-row {
+        gap: 2rem;
+    }
+
+    .half-width {
+        min-width: calc(50% - 1rem);
+    }
+}
+
+/* Large screens (1024px and up) */
+@media (min-width: 1024px) {
+    .container {
+        max-width: 1400px;
+        padding: 0 40px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .actions-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .admin-table {
+        font-size: 1rem;
+    }
+}
+
+/* Extra large screens (1200px and up) */
+@media (min-width: 1200px) {
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .hero .btn {
+        animation: none;
+    }
+
+    .bounce {
+        animation: none;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .product-card {
+        border: 2px solid;
+    }
+
+    .btn {
+        border: 2px solid;
+    }
+}
+
+/* Dark mode support - Already implemented via CSS variables */
+/* Print styles */
+@media print {
+    .header,
+    .footer,
+    .search-bar,
+    .auth-links,
+    .main-nav,
+    .admin-actions,
+    .admin-nav {
+        display: none;
+    }
+
+    .product-card,
+    .cart-item {
+        page-break-inside: avoid;
+    }
+
+    body {
+        background: white;
+        color: black;
+    }
+}
+
+/* Animation enhancements for mobile */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero h2 {
+        font-size: 1.4rem;
+    }
+
+    .hero .btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+}

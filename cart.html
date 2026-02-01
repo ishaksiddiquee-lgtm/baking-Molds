@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Baking Molds</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/responsive.css" type="text/css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>Muhammad Siddique Akber</h1>
+            </div>
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="sell.html">Sell</a></li>
+                    <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="Search for baking molds...">
+                    <button id="search-btn">Search</button>
+                </div>
+                <div class="auth-links">
+                    <a href="login.html">Login</a>
+                    <a href="register.html">Register</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Cart Section -->
+    <section class="cart-section">
+        <div class="container">
+            <h1>Shopping Cart</h1>
+
+            <div id="cart-items" class="cart-items">
+                <!-- Cart items will be loaded here -->
+            </div>
+
+            <div id="cart-summary" class="cart-summary">
+                <div class="summary-item">
+                    <span>Subtotal:</span>
+                    <span id="subtotal">₹0</span>
+                </div>
+                <div class="summary-item">
+                    <span>Delivery Fee:</span>
+                    <span id="delivery-fee">₹0</span>
+                </div>
+                <div class="summary-item total">
+                    <span>Total:</span>
+                    <span id="total">₹0</span>
+                </div>
+
+                <button id="checkout-btn" class="btn btn-primary" disabled>Proceed to Checkout</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Muhammad Siddique Akber</h3>
+                    <p>Professional molds maker specializing in high-quality baking molds for professional and home bakers.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Custom Mold Design</a></li>
+                        <li><a href="#">Bulk Orders</a></li>
+                        <li><a href="#">Quality Assurance</a></li>
+                        <li><a href="#">Fast Delivery</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +92-300-1234567</li>
+                        <li><i class="fas fa-envelope"></i> info@mhsiddiqueakber.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Lahore, Pakistan</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Muhammad Siddique Akber - Professional Molds Maker. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            loadCartItems();
+
+            // Add event listener for checkout button
+            const checkoutBtn = document.getElementById('checkout-btn');
+            if (checkoutBtn) {
+                checkoutBtn.addEventListener('click', function() {
+                    if (cart.length > 0) {
+                        // Redirect to checkout page (or create one)
+                        alert('Redirecting to checkout...');
+                        // window.location.href = 'checkout.html'; // if checkout page exists
+                    }
+                });
+            }
+        });
+
+        function loadCartItems() {
+            const cartItemsContainer = document.getElementById('cart-items');
+            const cartSummary = document.getElementById('cart-summary');
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p class="empty-cart">Your cart is empty. <a href="products.html">Continue shopping</a></p>';
+                cartSummary.style.display = 'none';
+                return;
+            }
+
+            cartItemsContainer.innerHTML = cart.map(item => `
+                <div class="cart-item">
+                    <img src="${item.image || 'assets/images/default-product.jpg'}" alt="${item.title}" class="cart-item-image">
+                    <div class="cart-item-details">
+                        <h3>${item.title}</h3>
+                        <p class="cart-item-price">${formatCurrency(item.price)}</p>
+                        <div class="quantity-control">
+                            <button class="quantity-btn" onclick="updateQuantity(${item.id}, -1)">-</button>
+                            <span class="quantity">${item.quantity}</span>
+                            <button class="quantity-btn" onclick="updateQuantity(${item.id}, 1)">+</button>
+                        </div>
+                    </div>
+                    <div class="cart-item-actions">
+                        <button class="btn btn-danger" onclick="removeFromCart(${item.id})">Remove</button>
+                        <p class="item-total">${formatCurrency(item.price * item.quantity)}</p>
+                    </div>
+                </div>
+            `).join('');
+
+            updateCartSummary();
+        }
+
+        function updateQuantity(productId, change) {
+            const item = cart.find(item => item.id === productId);
+            if (item) {
+                item.quantity += change;
+
+                if (item.quantity <= 0) {
+                    cart = cart.filter(i => i.id !== productId);
+                }
+
+                localStorage.setItem('cart', JSON.stringify(cart));
+                loadCartItems();
+                updateCartCount();
+            }
+        }
+
+        function updateCartSummary() {
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const deliveryFee = subtotal > 0 ? (subtotal > 2000 ? 0 : 100) : 0; // Free delivery over ₹2000
+            const total = subtotal + deliveryFee;
+
+            document.getElementById('subtotal').textContent = formatCurrency(subtotal);
+            document.getElementById('delivery-fee').textContent = formatCurrency(deliveryFee);
+            document.getElementById('total').textContent = formatCurrency(total);
+
+            // Enable checkout button if cart has items
+            const checkoutBtn = document.getElementById('checkout-btn');
+            if (checkoutBtn) {
+                checkoutBtn.disabled = cart.length === 0;
+            }
+
+            // Show summary section
+            const cartSummary = document.getElementById('cart-summary');
+            if (cartSummary) {
+                cartSummary.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

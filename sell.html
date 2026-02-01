@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sell Your Products - Baking Molds</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/responsive.css" type="text/css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>Muhammad Siddique Akber</h1>
+            </div>
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="sell.html">Sell</a></li>
+                    <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="Search for baking molds...">
+                    <button id="search-btn">Search</button>
+                </div>
+                <div class="auth-links">
+                    <a href="login.html">Login</a>
+                    <a href="register.html">Register</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sell Product Page -->
+    <section class="sell-product">
+        <div class="container">
+            <h1>Sell Your Baking Molds</h1>
+
+            <form id="product-form" class="sell-form">
+                <div class="form-group">
+                    <label for="product-title">Product Title *</label>
+                    <input type="text" id="product-title" name="title" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="product-description">Description *</label>
+                    <textarea id="product-description" name="description" rows="4" required></textarea>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group half-width">
+                        <label for="product-price">Price (₹) *</label>
+                        <input type="number" id="product-price" name="price" min="1" required>
+                    </div>
+
+                    <div class="form-group half-width">
+                        <label for="product-category">Category *</label>
+                        <select id="product-category" name="category" required>
+                            <option value="">Select Category</option>
+                            <option value="cake-molds">Cake Molds</option>
+                            <option value="cupcake-molds">Cupcake Molds</option>
+                            <option value="bread-molds">Bread Molds</option>
+                            <option value="silicone-molds">Silicone Molds</option>
+                            <option value="cookie-cutters">Cookie Cutters</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group half-width">
+                        <label for="product-condition">Condition</label>
+                        <select id="product-condition" name="condition">
+                            <option value="new">New</option>
+                            <option value="used">Used</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group half-width">
+                        <label for="product-stock">Stock Quantity *</label>
+                        <input type="number" id="product-stock" name="stock" min="1" value="1" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="product-images">Product Images *</label>
+                    <input type="file" id="product-images" name="images" accept="image/*" multiple required>
+                    <div class="image-preview" id="image-preview"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="product-brand">Brand (Optional)</label>
+                    <input type="text" id="product-brand" name="brand">
+                </div>
+
+                <div class="form-group">
+                    <label for="product-material">Material (Optional)</label>
+                    <input type="text" id="product-material" name="material" placeholder="e.g., Silicone, Metal, Plastic">
+                </div>
+
+                <div class="form-group">
+                    <label for="product-dimensions">Dimensions (Optional)</label>
+                    <input type="text" id="product-dimensions" name="dimensions" placeholder="e.g., 20cm x 15cm x 5cm">
+                </div>
+
+                <button type="submit" class="btn btn-primary">List Product</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Muhammad Siddique Akber</h3>
+                    <p>Professional molds maker specializing in high-quality baking molds for professional and home bakers.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Custom Mold Design</a></li>
+                        <li><a href="#">Bulk Orders</a></li>
+                        <li><a href="#">Quality Assurance</a></li>
+                        <li><a href="#">Fast Delivery</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +92-300-1234567</li>
+                        <li><i class="fas fa-envelope"></i> info@mhsiddiqueakber.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Lahore, Pakistan</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Muhammad Siddique Akber - Professional Molds Maker. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/products.js"></script>
+</body>
+</html>

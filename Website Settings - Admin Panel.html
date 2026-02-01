@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<!-- saved from url=(0092)file:///C:/Users/pc/Desktop/MCP/cluade_Skill/smart-todo-app/baking-molds/admin/settings.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Settings - Admin Panel</title>
+    <link rel="stylesheet" href="./Website Settings - Admin Panel_files/style.css">
+    <link rel="stylesheet" href="./Website Settings - Admin Panel_files/styles.css">
+</head>
+<body>
+    <!-- Admin Header -->
+    <header class="admin-header">
+        <div class="container">
+            <div class="logo">
+                <h1>Admin Panel - BakingMolds.pk</h1>
+            </div>
+
+            <nav class="admin-nav">
+                <ul>
+                    <li><a href="file:///C:/Users/pc/Desktop/MCP/cluade_Skill/smart-todo-app/baking-molds/admin/index.html">Dashboard</a></li>
+                    <li><a href="file:///C:/Users/pc/Desktop/MCP/cluade_Skill/smart-todo-app/baking-molds/admin/products.html">Products</a></li>
+                    <li><a href="file:///C:/Users/pc/Desktop/MCP/cluade_Skill/smart-todo-app/baking-molds/admin/orders.html">Orders</a></li>
+                    <li><a href="file:///C:/Users/pc/Desktop/MCP/cluade_Skill/smart-todo-app/baking-molds/admin/users.html">Users</a></li>
+                    <li><a href="file:///C:/Users/pc/Desktop/MCP/cluade_Skill/smart-todo-app/baking-molds/admin/settings.html" class="active">Settings</a></li>
+                </ul>
+            </nav>
+
+            <div class="admin-actions">
+                <span>Welcome, Admin</span>
+                <button class="btn btn-secondary">Logout</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Settings Page -->
+    <main class="admin-dashboard">
+        <div class="container">
+            <h1>Website Configuration</h1>
+
+            <!-- Site Settings Form -->
+            <div class="admin-form">
+                <h2>General Settings</h2>
+                <form id="site-settings-form">
+                    <div class="form-row">
+                        <div class="form-group half-width">
+                            <label for="site-name">Site Name</label>
+                            <input type="text" id="site-name" name="siteName" value="BakingMolds.pk">
+                        </div>
+                        <div class="form-group half-width">
+                            <label for="site-description">Site Description</label>
+                            <input type="text" id="site-description" name="siteDescription" value="Your one-stop destination for premium baking molds and accessories.">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group half-width">
+                            <label for="contact-email">Contact Email</label>
+                            <input type="email" id="contact-email" name="contactEmail" value="info@bakingmolds.pk">
+                        </div>
+                        <div class="form-group half-width">
+                            <label for="contact-phone">Contact Phone</label>
+                            <input type="tel" id="contact-phone" name="contactPhone" value="+91-9876543210">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="site-logo">Site Logo</label>
+                        <input type="file" id="site-logo" name="siteLogo" accept="image/*">
+                        <div class="image-preview" id="logo-preview">
+                            <img src="file:///C:/Users/pc/Desktop/MCP/cluade_Skill/smart-todo-app/baking-molds/assets/images/default-logo.png" alt="Current Logo" id="current-logo" style="max-width: 200px; max-height: 100px;">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="favicon">Favicon</label>
+                        <input type="file" id="favicon" name="favicon" accept="image/x-icon, image/png">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Save General Settings</button>
+                </form>
+            </div>
+
+            <!-- Homepage Banner -->
+            <div class="admin-form">
+                <h2>Homepage Banner</h2>
+                <form id="banner-settings-form">
+                    <div class="form-group">
+                        <label for="banner-title">Banner Title</label>
+                        <input type="text" id="banner-title" name="bannerTitle" value="Find Perfect Baking Molds for Every Occasion">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="banner-subtitle">Banner Subtitle</label>
+                        <input type="text" id="banner-subtitle" name="bannerSubtitle" value="Wide variety of high-quality baking molds at competitive prices">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="banner-image">Banner Image</label>
+                        <input type="file" id="banner-image" name="bannerImage" accept="image/*">
+                        <div class="image-preview" id="banner-preview">
+                            <img src="file:///C:/Users/pc/Desktop/MCP/cluade_Skill/smart-todo-app/baking-molds/assets/images/hero-banner.jpg" alt="Current Banner" id="current-banner" style="max-width: 400px; max-height: 200px;">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="banner-button-text">Button Text</label>
+                        <input type="text" id="banner-button-text" name="bannerButtonText" value="Shop Now">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="banner-button-link">Button Link</label>
+                        <input type="text" id="banner-button-link" name="bannerButtonLink" value="products.html">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Save Banner Settings</button>
+                </form>
+            </div>
+
+            <!-- Categories Management -->
+            <div class="admin-form">
+                <h2>Product Categories</h2>
+                <form id="categories-form">
+                    <div id="categories-list">
+                <div class="category-item" data-id="cake-molds">
+                    <div class="form-row">
+                        <div class="form-group half-width">
+                            <label>Category ID</label>
+                            <input type="text" name="categoryId" value="cake-molds" readonly="">
+                        </div>
+                        <div class="form-group half-width">
+                            <label>Category Name</label>
+                            <input type="text" name="categoryName" value="Cake Molds">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group half-width">
+                            <label>Category Icon</label>
+                            <input type="text" name="categoryIcon" value="🎂" placeholder="Emoji or icon">
+                        </div>
+                        <div class="form-group half-width">
+                            <button type="button" class="btn btn-danger" onclick="removeCategory(this)">Remove</button>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            
+                <div class="category-item" data-id="cupcake-molds">
+                    <div class="form-row">
+                        <div class="form-group half-width">
+                            <label>Category ID</label>
+                            <input type="text" name="categoryId" value="cupcake-molds" readonly="">
+                        </div>
+                        <div class="form-group half-width">
+                            <label>Category Name</label>
+                            <input type="text" name="categoryName" value="Cupcake Molds">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group half-width">
+                            <label>Category Icon</label>
+                            <input type="text" name="categoryIcon" value="🧁" placeholder="Emoji or icon">
+                        </div>
+                        <div class="form-group half-width">
+                            <button type="button" class="btn btn-danger" onclick="removeCategory(this)">Remove</button>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            
+                <div class="category-item" data-id="bread-molds">
+                    <div class="form-row">
+                        <div class="form-group half-width">
+                            <label>Category ID</label>
+                            <input type="text" name="categoryId" value="bread-molds" readonly="">
+                        </div>
+                        <div class="form-group half-width">
+                            <label>Category Name</label>
+                            <input type="text" name="categoryName" value="Bread Molds">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group half-width">
+                            <label>Category Icon</label>
+                            <input type="text" name="categoryIcon" value="🍞" placeholder="Emoji or icon">
+                        </div>
+                        <div class="form-group half-width">
+                            <button type="button" class="btn btn-danger" onclick="removeCategory(this)">Remove</button>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            
+                <div class="category-item" data-id="silicone-molds">
+                    <div class="form-row">
+                        <div class="form-group half-width">
+                            <label>Category ID</label>
+                            <input type="text" name="categoryId" value="silicone-molds" readonly="">
+                        </div>
+                        <div class="form-group half-width">
+                            <label>Category Name</label>
+                            <input type="text" name="categoryName" value="Silicone Molds">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group half-width">
+                            <label>Category Icon</label>
+                            <input type="text" name="categoryIcon" value="🥄" placeholder="Emoji or icon">
+                        </div>
+                        <div class="form-group half-width">
+                            <button type="button" class="btn btn-danger" onclick="removeCategory(this)">Remove</button>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            
+                <div class="category-item" data-id="cookie-cutters">
+                    <div class="form-row">
+                        <div class="form-group half-width">
+                            <label>Category ID</label>
+                            <input type="text" name="categoryId" value="cookie-cutters" readonly="">
+                        </div>
+                        <div class="form-group half-width">
+                            <label>Category Name</label>
+                            <input type="text" name="categoryName" value="Cookie Cutters">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group half-width">
+                            <label>Category Icon</label>
+                            <input type="text" name="categoryIcon" value="🍪" placeholder="Emoji or icon">
+                        </div>
+                        <div class="form-group half-width">
+                            <button type="button" class="btn btn-danger" onclick="removeCategory(this)">Remove</button>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            
+                <div class="category-item" data-id="other">
+                    <div class="form-row">
+                        <div class="form-group half-width">
+                            <label>Category ID</label>
+                            <input type="text" name="categoryId" value="other" readonly="">
+                        </div>
+                        <div class="form-group half-width">
+                            <label>Category Name</label>
+                            <input type="text" name="categoryName" value="Other">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group half-width">
+                            <label>Category Icon</label>
+                            <input type="text" name="categoryIcon" value="📦" placeholder="Emoji or icon">
+                        </div>
+                        <div class="form-group half-width">
+                            <button type="button" class="btn btn-danger" onclick="removeCategory(this)">Remove</button>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+
+                    <button type="button" class="btn btn-secondary" onclick="addCategory()">Add Category</button>
+                    <button type="submit" class="btn btn-primary">Save Categories</button>
+                </form>
+            </div>
+
+            <!-- Social Media Links -->
+            <div class="admin-form">
+                <h2>Social Media Links</h2>
+                <form id="social-links-form">
+                    <div class="form-row">
+                        <div class="form-group half-width">
+                            <label for="facebook-link">Facebook URL</label>
+                            <input type="url" id="facebook-link" name="facebookLink" value="https://facebook.com/bakingmolds">
+                        </div>
+                        <div class="form-group half-width">
+                            <label for="instagram-link">Instagram URL</label>
+                            <input type="url" id="instagram-link" name="instagramLink" value="https://instagram.com/bakingmolds">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group half-width">
+                            <label for="twitter-link">Twitter URL</label>
+                            <input type="url" id="twitter-link" name="twitterLink" value="https://twitter.com/bakingmolds">
+                        </div>
+                        <div class="form-group half-width">
+                            <label for="youtube-link">YouTube URL</label>
+                            <input type="url" id="youtube-link" name="youtubeLink" value="https://youtube.com/bakingmolds">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Save Social Links</button>
+                </form>
+            </div>
+
+            <!-- Theme Colors -->
+            <div class="admin-form">
+                <h2>Theme Colors</h2>
+                <form id="theme-settings-form">
+                    <div class="form-row">
+                        <div class="form-group half-width">
+                            <label for="primary-color">Primary Color</label>
+                            <input type="color" id="primary-color" name="primaryColor" value="#e67e22">
+                        </div>
+                        <div class="form-group half-width">
+                            <label for="secondary-color">Secondary Color</label>
+                            <input type="color" id="secondary-color" name="secondaryColor" value="#6c757d">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group half-width">
+                            <label for="accent-color">Accent Color</label>
+                            <input type="color" id="accent-color" name="accentColor" value="#3498db">
+                        </div>
+                        <div class="form-group half-width">
+                            <label for="background-color">Background Color</label>
+                            <input type="color" id="background-color" name="backgroundColor" value="#f8f9fa">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Save Theme Settings</button>
+                </form>
+            </div>
+
+            <!-- Payment Settings -->
+            <div class="admin-form">
+                <h2>Payment Settings</h2>
+                <form id="payment-settings-form">
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="cod-enabled" name="codEnabled" checked="">
+                        <label for="cod-enabled">Cash on Delivery Enabled</label>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="online-payment-enabled" name="onlinePaymentEnabled" checked="">
+                        <label for="online-payment-enabled">Online Payment Enabled</label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="payment-gateway">Payment Gateway</label>
+                        <select id="payment-gateway" name="paymentGateway">
+                            <option value="razorpay">Razorpay</option>
+                            <option value="stripe">Stripe</option>
+                            <option value="paypal">PayPal</option>
+                            <option value="paytm">PayTM</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Save Payment Settings</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="./Website Settings - Admin Panel_files/main.js"></script>
+    <script src="./Website Settings - Admin Panel_files/script.js"></script>
+    <script>
+        // Initialize settings page
+        document.addEventListener('DOMContentLoaded', function() {
+            loadCategories();
+            setupSettingsForms();
+        });
+
+        // Load categories
+        function loadCategories() {
+            const categoriesList = document.getElementById('categories-list');
+            if (!categoriesList) return;
+
+            // Sample categories - in a real app, these would come from localStorage or DB
+            const categories = [
+                { id: 'cake-molds', name: 'Cake Molds', icon: '🎂' },
+                { id: 'cupcake-molds', name: 'Cupcake Molds', icon: '🧁' },
+                { id: 'bread-molds', name: 'Bread Molds', icon: '🍞' },
+                { id: 'silicone-molds', name: 'Silicone Molds', icon: '🥄' },
+                { id: 'cookie-cutters', name: 'Cookie Cutters', icon: '🍪' },
+                { id: 'other', name: 'Other', icon: '📦' }
+            ];
+
+            categoriesList.innerHTML = categories.map(category => `
+                <div class="category-item" data-id="${category.id}">
+                    <div class="form-row">
+                        <div class="form-group half-width">
+                            <label>Category ID</label>
+                            <input type="text" name="categoryId" value="${category.id}" readonly>
+                        </div>
+                        <div class="form-group half-width">
+                            <label>Category Name</label>
+                            <input type="text" name="categoryName" value="${category.name}">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group half-width">
+                            <label>Category Icon</label>
+                            <input type="text" name="categoryIcon" value="${category.icon}" placeholder="Emoji or icon">
+                        </div>
+                        <div class="form-group half-width">
+                            <button type="button" class="btn btn-danger" onclick="removeCategory(this)">Remove</button>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            `).join('');
+        }
+
+        // Add new category
+        function addCategory() {
+            const categoriesList = document.getElementById('categories-list');
+            const newCategoryId = 'category-' + Date.now();
+
+            const categoryHtml = `
+                <div class="category-item" data-id="${newCategoryId}">
+                    <div class="form-row">
+                        <div class="form-group half-width">
+                            <label>Category ID</label>
+                            <input type="text" name="categoryId" value="${newCategoryId}" required>
+                        </div>
+                        <div class="form-group half-width">
+                            <label>Category Name</label>
+                            <input type="text" name="categoryName" placeholder="Category Name" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group half-width">
+                            <label>Category Icon</label>
+                            <input type="text" name="categoryIcon" placeholder="Emoji or icon">
+                        </div>
+                        <div class="form-group half-width">
+                            <button type="button" class="btn btn-danger" onclick="removeCategory(this)">Remove</button>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            `;
+
+            categoriesList.insertAdjacentHTML('beforeend', categoryHtml);
+        }
+
+        // Remove category
+        function removeCategory(button) {
+            const categoryItem = button.closest('.category-item');
+            categoryItem.remove();
+        }
+
+        // Setup form submissions
+        function setupSettingsForms() {
+            // Site settings form
+            const siteSettingsForm = document.getElementById('site-settings-form');
+            if (siteSettingsForm) {
+                siteSettingsForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    saveSiteSettings(new FormData(siteSettingsForm));
+                });
+            }
+
+            // Banner settings form
+            const bannerSettingsForm = document.getElementById('banner-settings-form');
+            if (bannerSettingsForm) {
+                bannerSettingsForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    saveBannerSettings(new FormData(bannerSettingsForm));
+                });
+            }
+
+            // Categories form
+            const categoriesForm = document.getElementById('categories-form');
+            if (categoriesForm) {
+                categoriesForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    saveCategories();
+                });
+            }
+
+            // Social links form
+            const socialLinksForm = document.getElementById('social-links-form');
+            if (socialLinksForm) {
+                socialLinksForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    saveSocialLinks(new FormData(socialLinksForm));
+                });
+            }
+
+            // Theme settings form
+            const themeSettingsForm = document.getElementById('theme-settings-form');
+            if (themeSettingsForm) {
+                themeSettingsForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    saveThemeSettings(new FormData(themeSettingsForm));
+                });
+            }
+
+            // Payment settings form
+            const paymentSettingsForm = document.getElementById('payment-settings-form');
+            if (paymentSettingsForm) {
+                paymentSettingsForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    savePaymentSettings(new FormData(paymentSettingsForm));
+                });
+            }
+
+            // Add event listeners for image previews
+            const logoInput = document.getElementById('site-logo');
+            const bannerInput = document.getElementById('banner-image');
+
+            if (logoInput) {
+                logoInput.addEventListener('change', function(e) {
+                    previewImage(e.target, 'current-logo');
+                });
+            }
+
+            if (bannerInput) {
+                bannerInput.addEventListener('change', function(e) {
+                    previewImage(e.target, 'current-banner');
+                });
+            }
+        }
+
+        // Preview uploaded image
+        function previewImage(input, previewId) {
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+
+                reader.onload = function(e) {
+                    const previewImg = document.getElementById(previewId);
+                    if (previewImg) {
+                        previewImg.src = e.target.result;
+                    }
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        // Save functions (simulated - would connect to backend in real app)
+        function saveSiteSettings(formData) {
+            // In a real app, this would send data to server
+            // For now, we'll just show a success message
+            showAdminMessage('Site settings saved successfully!', 'success');
+        }
+
+        function saveBannerSettings(formData) {
+            showAdminMessage('Banner settings saved successfully!', 'success');
+        }
+
+        function saveCategories() {
+            showAdminMessage('Categories saved successfully!', 'success');
+        }
+
+        function saveSocialLinks(formData) {
+            showAdminMessage('Social links saved successfully!', 'success');
+        }
+
+        function saveThemeSettings(formData) {
+            showAdminMessage('Theme settings saved successfully!', 'success');
+        }
+
+        function savePaymentSettings(formData) {
+            showAdminMessage('Payment settings saved successfully!', 'success');
+        }
+    </script>
+
+</body></html>

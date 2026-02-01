@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products - Baking Molds</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/responsive.css" type="text/css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>BakingMolds.pk</h1>
+            </div>
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="sell.html">Sell</a></li>
+                    <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="Search for baking molds...">
+                    <button id="search-btn">Search</button>
+                </div>
+                <div class="auth-links">
+                    <a href="login.html">Login</a>
+                    <a href="register.html">Register</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Product Listing Page -->
+    <section class="product-listing">
+        <div class="container">
+            <h1>All Products</h1>
+
+            <!-- Filters -->
+            <div class="filters">
+                <div class="filter-group">
+                    <label for="category-filter">Category:</label>
+                    <select id="category-filter">
+                        <option value="">All Categories</option>
+                        <option value="cake-molds">Cake Molds</option>
+                        <option value="cupcake-molds">Cupcake Molds</option>
+                        <option value="bread-molds">Bread Molds</option>
+                        <option value="silicone-molds">Silicone Molds</option>
+                        <option value="cookie-cutters">Cookie Cutters</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="price-filter">Price Range:</label>
+                    <select id="price-filter">
+                        <option value="">Any Price</option>
+                        <option value="0-500">Under ₹500</option>
+                        <option value="500-1000">₹500 - ₹1000</option>
+                        <option value="1000-2000">₹1000 - ₹2000</option>
+                        <option value="2000+">Over ₹2000</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="sort-by">Sort By:</label>
+                    <select id="sort-by">
+                        <option value="newest">Newest First</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="rating">Highest Rated</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Product Grid -->
+            <div id="product-list" class="product-grid">
+                <!-- Products will be loaded here dynamically -->
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <button id="prev-page" disabled>Previous</button>
+                <span id="page-info">Page 1 of 1</span>
+                <button id="next-page" disabled>Next</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Muhammad Siddique Akber</h3>
+                    <p>Professional molds maker specializing in high-quality baking molds for professional and home bakers.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Custom Mold Design</a></li>
+                        <li><a href="#">Bulk Orders</a></li>
+                        <li><a href="#">Quality Assurance</a></li>
+                        <li><a href="#">Fast Delivery</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +92-300-1234567</li>
+                        <li><i class="fas fa-envelope"></i> info@mhsiddiqueakber.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Lahore, Pakistan</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Muhammad Siddique Akber - Professional Molds Maker. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/products.js"></script>
+</body>
+</html>
